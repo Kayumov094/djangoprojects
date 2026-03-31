@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang = uz>
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <title>Bu Mening birinchi django loyiham</title>
+    <style>
+        /*============ CSS qismi================================
+        Bu yerda garderob shkafi hisobalanadi
+        uni ichida kiyimlar bolishi kerak*/
+        body                                        /* Bu umumiy web saytning qolipi uchun */
+        {
+            font-family: sans-serif;   
+            margin: 10; /*top-bottom and left-right*/
+            /* color:rgb(24, 95, 153); */
+            background-image: url(https://wallpaperaccess.com/full/2919086.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        nav                                          /* navigatsiya paneli uchun */
+        {
+            display: flex;             /*Ichidagilarni bitta qatorga tizadi*/
+            background-color: rgb(20, 81, 106);
+            justify-content: space-between; /* mayda divlarni ikkit tomonga ajratib tashlaydi*/
+            align-items: center; /* divlani markaziy chiziqqa tekislab beradi*/
+            gap: 15px;                 /*divlar orasidagi masofa */
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px 20px;
+        }
+        .nav-item                                   /* navigatsiya paneli ichidagi tugmalari uchun*/
+        {
+            background-color: rgb(240, 237, 237);
+            border-radius: 10px;
+        }
+        .nav-item:hover                         /* navigatsiya paneli ichidagi tugmalarini hover qilish  uchun  */
+        {
+            background-color: rgb(255, 255, 255);
+            border-radius: 25px;
+        }
+        nav a {                                     /* navigatsiya paneli ichidagi tugmalaridagi harflar uchun  */
+            color: rgb(20, 81, 106);
+            padding: 5px 5px; 
+            text-decoration: none;
+        }
+        nav a:hover {                               /* navigatsiya paneli ichidagi tugmalaridagi harflarini hover qilish  uchun  */
+            color: rgb(161, 187, 57); 
+            text-decoration: underline;
+        }   
+        .logo 
+        {
+            /* Matn xususiyatlari */
+            font-size: 28px;           /* Kattaroq hajm */
+            font-weight: 800;          /* Qalin harflar */
+            letter-spacing: 1px;       /* Harflar orasini biroz ochamiz */
+            
+            /* Rang va bezak */
+            color: #ffffff;            /* Oq rang (to'q ko'k fonda juda zo'r ko'rinadi) */
+            text-transform: lowercase; /* Hammasini katta harf qilamiz (ixtiyoriy) */
+            
+            /* Joylashuv */
+            cursor: pointer;           /* Sichqoncha borganda qo'lcha chiqishi uchun */
+            padding: 5px 10px;
+        }
+
+        /* Logotip ichidagi 'X' harfini alohida rang qilish siri */
+        .logo span
+        {
+            color: #ff0000;            /* Siz tanlagan och yashil rang */
+        }
+        
+        .container
+        {
+            background:rgb(8, 67, 96); 
+            padding: 10px 10px;
+            border-radius: 10px; 
+            color: white;
+            display: inline-block;
+            margin: 10px;
+        }   
+        .container_footer
+        {
+            background:rgb(8, 67, 96); 
+            padding: 10px 10px;
+            border-radius: 10px; 
+            color: white;
+            margin: 10px;
+        }  
+    
+        .btn_container{
+            background-color:rgb(233, 238, 236); 
+            padding:1px; 
+            border-radius:10px}
+        
+        footer { 
+            background: rgb(20, 81, 106);; 
+            color: white; 
+            text-align: center; 
+            padding: 20px;
+        }
+
+   </style>
+</head>
+<body> 
+    <nav>
+        <div class = "logo">
+            Skop<span>x</span> analytical agency
+        </div>
+
+
+        <div style = "display:flex; gap: 25px;">
+            <a href="/" class = "nav-item">Home</a>
+            <a href="/about/" class = "nav-item">About</a>
+        </div>
+    </nav>
+
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <footer style="padding: 40px 5%; background-color: #084360; text-align: center; color: white; border-radius:15px;margin: 10px;">
+        <div>
+            <h3 style = "color:red;">© 2026 SkopX analytical agency</h3>
+        </div>
+
+        <div>
+            <p>Biz bilan bog'laning:</p>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 20px;">
+
+            <a  href="https://t.me/arslonbek_kayumov" 
+                target="_blank" 
+                class="container" 
+                style="text-decoration: underline; display: inline-flex; align-items: center; padding: 10px 15px;">
+                    
+                    <img src="https://cdn-icons-png.flaticon.com/128/2111/2111646.png" 
+                        alt="Telegram" 
+                        style="width: 24px; height: 24px; margin-right: 8px;"> 
+                        Telegram
+            </a>
+
+            <a  href="https://github.com/Kayumov094" 
+                target="_blank" 
+                class="container" 
+                style="text-decoration: underline; display: inline-flex; align-items: center; padding: 10px 15px;">
+                    
+                    <img src="https://cdn-icons-png.flaticon.com/128/14063/14063266.png" 
+                        alt="GitHub" 
+                        style="width: 24px; height: 24px; margin-right: 8px;"> 
+                        GitHub
+            </a>
+
+            <a  href="https://linkedin.com/in/AnalystKayumov" 
+                target="_blank" 
+                class="container" 
+                style="text-decoration: underline; display: inline-flex; align-items: center; padding: 10px 15px;">
+                    
+                    <img src= "https://cdn-icons-png.flaticon.com/128/145/145807.png"  
+                        alt="LinkedIn" 
+                        style="width: 24px; height: 24px; margin-right: 8px;"> 
+                        LinkedIn
+            </a>
+  
+
+        </div>
+</body>
+
+</html> 
