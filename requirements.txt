@@ -9,3 +9,4 @@ python-discovery==1.2.0
 setuptools==82.0.1
 virtualenv==21.2.0
 whitenoise==6.12.0
+django
