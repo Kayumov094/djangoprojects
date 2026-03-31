@@ -1,0 +1,11 @@
+certifi==2026.2.25
+distlib==0.4.0
+filelock==3.25.2
+gunicorn==25.3.0
+packaging==26.0
+pipenv==2026.2.2
+platformdirs==4.9.4
+python-discovery==1.2.0
+setuptools==82.0.1
+virtualenv==21.2.0
+whitenoise==6.12.0
