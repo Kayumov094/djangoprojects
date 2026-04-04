@@ -17,5 +17,34 @@
         </div>
  
     </div>
+
+    <div>
+        <h1>Bizning Jamoa</h1>
+            {% if xodimlar %}
+                {% for xodim in xodimlar %}
+                    <div class="container">
+                        <h2>{{ xodim.ism }} {{ xodim.familiya }}</h2>
+                        <p><strong>Lavozimi:</strong> {{ xodim.lavozim }}</p>
+                        <p><strong>Tajribasi:</strong> {{ xodim.tajriba_yil }} yil</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Hozircha xodimlar haqida ma'lumot yo'q.</p>
+            {% endif %}
+        <div>
+            <h1>Biz bilan bog'lanish</h1>
+                        {% if kontaktlar %}
+                            {% for kontakt in kontaktlar %}
+                                <div class="box">
+                                    <p><strong>{{ kontakt.xodim.ism }} ({{ kontakt.xodim.lavozim }}):</strong> {{ kontakt.tel_nomer }}</p>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>Hozircha kontaktlar qo'shilmagan.</p>
+                        {% endif %}
+        </div>
+
+            
+    </div>
  
 {% endblock content %}

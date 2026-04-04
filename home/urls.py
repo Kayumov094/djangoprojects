@@ -1,10 +1,11 @@
 from django.urls import path 
+
 # django kutubxonasining urls modulidan path degan funksiyani chaqirib oldim
-from .views import javob_qaytar
+from . import views
 # home\views modulidan javob_qaytar deb yaratgan funksiyamizni chaqirib oldim
 
 urlpatterns = [
-    path('', javob_qaytar, name ='home')
+    path('', views.home_page, name ='home')
 ]
 # urlpatterns - bu royhat ko'rinishidagi maxsus o'zgaruvchi
 # django serverga so'rov kelganda aynan shu nomli o'zgaruvchini qidiradi

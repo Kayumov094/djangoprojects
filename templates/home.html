@@ -16,7 +16,28 @@
                 style = "width:100%; height:auto; border-radius:10px; box-shadow: 10px 10px;">
 
         </div>
- 
+    </div>
+    
+    <div>
+        <div>
+            <h1>Mening Loyihalarim</h1>
+        </div>
+            
+        <div>
+            {% if loyihalar %}
+                    {% for loyiha in loyihalar %}
+                        <div class="container">
+                            <h2>{{ loyiha.nomi }} ({{ loyiha.yili }})</h2>
+                            <p><strong>Tavsif:</strong> {{ loyiha.tavsifi }}</p>
+                            <p><strong>Hudud:</strong> {{ loyiha.hudud }}, {{ loyiha.davlat }}</p>
+                            <p><strong>Mas'ul xodim:</strong> {{ loyiha.masul_xodim.lavozim }} {{ loyiha.masul_xodim.ism }} {{ loyiha.masul_xodim.familiya }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Hozircha loyihalar qo'shilmagan.</p>
+                {% endif %}
+
+        </div>
     </div>
  
 

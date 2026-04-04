@@ -1,12 +1,18 @@
 from django.shortcuts import render
 #django kutubxonasidan shortcuts moduli ichidan render funksiyasini chaqirib oldim 
-from django.http import HttpResponse
-# django kutubxonasida http moduli ichidan HttpResponse funksiyasini chaqirib oldim
+from .models import Kontakt, Xodim
 
-# About app uchun create function named: about_uchun_javob_qaytar
-# agar shu nomli funksiyaga murojaat qilinsa "Welocome to about " degan javob qayatardi.
-#Tayyor bolgan view ni urlsga birlashtiraman
-# Create your views here.
-def about_uchun_javob_qaytar(request):
-    return render(request, 'about.html')
-         
+# funksiya yordamida DB dan Xodim va Kontakt degan table larni chqirib oldim
+def about_page(request):
+    xodimlar = Xodim.objects.all()
+    kontaktlar = Kontakt.objects.all()
+
+# Kelgan barcha malumotlarni context degan qutiga soldim
+    context = {
+        'xodimlar': xodimlar,
+        'kontaktlar': kontaktlar
+    }
+# Qutini about.html ga jonataman
+    return render(request, 'about.html', context)
+        
+       
